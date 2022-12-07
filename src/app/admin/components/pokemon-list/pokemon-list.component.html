@@ -1,0 +1,26 @@
+<div class="pokemon-list">
+  <div *ngIf="!isLoading; else loadingBlock ">
+    <h1>Список покемонов</h1>
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Имя</th>
+        <th>Описание</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let pokemon of pokemons">
+        <td>{{pokemon.id}}</td>
+        <td>{{pokemon.name}}</td>
+        <td>{{pokemon.description}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <button routerLink="new">Создать</button>
+  </div>
+</div>
+
+<ng-template #loadingBlock>
+  <p>Загрузка...</p>
+</ng-template>

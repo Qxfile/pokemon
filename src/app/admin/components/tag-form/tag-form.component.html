@@ -1,0 +1,33 @@
+<div class="tag-form">
+  <h1>{{tagId === 'new' ? 'Создание': 'Редактирование'}} тега</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <tui-input formControlName="name">
+        Название*
+        <input
+          tuiTextfield
+          type="text"
+        />
+      </tui-input>
+    </div>
+    <div>
+      <tui-input-color
+        class="b-form"
+        [colors]="palette"
+        formControlName="color"
+      >
+        Цвет*
+      </tui-input-color>
+    </div>
+    <button
+      tuiButton
+      type="submit"
+      [disabled]="form.invalid"
+      [showLoader]="isSaving"
+
+    >
+      {{tagId === 'new' ? 'Создать': 'Редактировать'}}
+    </button>
+
+  </form>
+</div>
