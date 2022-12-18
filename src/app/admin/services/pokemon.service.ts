@@ -19,5 +19,7 @@ export class PokemonService {
   getAll(): Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>(this.API_URL + this.url)
   }
-
+  create(pokemon: any): Observable<Pokemon[]> {
+    return this.http.post<Pokemon[]>(this.API_URL + this.url, pokemon)
+  }
 }

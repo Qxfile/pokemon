@@ -11,6 +11,7 @@ import {map, tap} from "rxjs";
   templateUrl: './tag-form.component.html',
   styleUrls: ['./tag-form.component.scss']
 })
+
 export class TagFormComponent implements OnInit {
   form: FormGroup = this.fb.group({
     name: ['', Validators.required],

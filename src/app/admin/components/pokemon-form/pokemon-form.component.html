@@ -1,1 +1,25 @@
-<p>pokemon-form works!</p>
+<div class="pokemon-form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input placeholder="Имя*" formControlName="name">
+    <input placeholder="Описание" formControlName="description">
+    <input placeholder="Высота*" formControlName="height">
+    <input placeholder="Вес*" formControlName="weight">
+    <input placeholder="Здоровье*" formControlName="hp">
+    <input placeholder="Атака" formControlName="attack">
+    <input placeholder="Защита" formControlName="defend">
+    <input placeholder="Уровень" formControlName="level">
+    <input placeholder="Выносливось*" formControlName="stamina">
+    <input placeholder="Происхождение" formControlName="spd">
+    <input placeholder="Способность(ти, список)" formControlName="abilities">
+    <input placeholder="Теги" formControlName="tags" />
+
+    <button
+      tuiButton
+      type="submit"
+      [showLoader]="isSaving"
+    >
+      Создать
+      <!--      {{tagId === 'new' ? 'Создать': 'Редактировать'}}-->
+    </button>
+  </form>
+</div>
